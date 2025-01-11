@@ -4,17 +4,24 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="asset/img/favicon.png"  >
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>short</title>
+    <meta name="description" content="小洛の短链 - 一个简单高效的URL缩短服务。" />
+    <meta name="keywords" content="URL短链, URL缩短, 小洛, 短链服务" />
+    <meta name="author" content="x-dr" />
+    <meta property="og:title" content="小洛の短链" />
+    <meta property="og:description" content="使用小洛の短链来缩短和管理您的链接。" />
+    <meta property="og:url" content="https://www.200597.xyz/" />
+    <title>小洛の短链</title>
     <style>
       :root {
-        --color-primary: #5c7cfa;
-        --color-primary-dark: #4263eb;
-        --color-primary-alpha: #5c7cfa50;
+        --color-primary: #ff6f61;
+        --color-primary-dark: #e63946;
+        --color-primary-alpha: rgba(255, 111, 97, 0.5);
 
-        --body-color: #495057;
+        --body-color: #1d3557;
         --body-bg: #f8f9fa;
 
-        --border-color: #dee2e6;
+        --border-color: #a8dadc;
+        --hover-effect: 0 0 0 .25rem var(--color-primary-alpha);
       }
 
       body {
@@ -30,16 +37,18 @@
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         text-rendering: optimizelegibility;
         -webkit-font-smoothing: antialiased;
+        background: var(--body-bg);
       }
 
       a {
-        color: var(--color-primary);
+        color: var(--color-primary-dark);
         text-decoration: none;
         transition: color .3s;
+        position: relative;
       }
 
       a:hover {
-        color: var(--color-primary);
+        color: var(--color-primary-dark);
         text-decoration: underline;
       }
 
@@ -203,7 +212,13 @@
     </style>
   </head>
   <body>
-    <header><h1>short</h1></header>
+    <header>
+      <h1>
+        <a href="https://www.200597.xyz/" style="text-decoration: none; color: inherit;">
+          <span style="border-bottom: 3px solid black; font-weight: bold; color: black; cursor: pointer;">小洛の短链</span>
+        </a>
+      </h1>
+    </header>
     <main x-data="app" x-cloak>
       <p x-show.transition.opacity="alert" :class="alert?.type" x-text="alert?.message"></p>
       <input placeholder="输入要缩短的网址..." x-model="url" x-ref="url" />
@@ -217,7 +232,7 @@
       <button :class="{ loading }" :disabled="loading || isValidated()" @click="submit($refs, $nextTick)">生成</button>
     </main>
     <footer>
-     service
+      <a href="https://www.200597.xyz/" style="text-decoration: none; color: inherit;">200597.xyz</a>
     </footer>
     <script src="asset/js/alpine.js"></script>
     <script>
