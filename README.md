@@ -2,7 +2,6 @@
 
 **Introduction**: Use Cloudflare Pages to create Shortener of URL
 
-**My Demo**  : [https://d.igdu.xyz/](https://d.igdu.xyz/);
 
 **Original author's Demo** : [https://d.131213.xyz/](https://d.131213.xyz/)
 
